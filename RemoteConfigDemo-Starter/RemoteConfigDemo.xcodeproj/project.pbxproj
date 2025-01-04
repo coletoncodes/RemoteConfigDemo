@@ -9,15 +9,12 @@
 /* Begin PBXBuildFile section */
 		26D67CDA2D296BF200E0BF1A /* FirebaseRemoteConfig in Frameworks */ = {isa = PBXBuildFile; productRef = 26D67CD92D296BF200E0BF1A /* FirebaseRemoteConfig */; };
 		26D67CDD2D296C0E00E0BF1A /* FirebaseRemoteConfig in Frameworks */ = {isa = PBXBuildFile; productRef = 26D67CDC2D296C0E00E0BF1A /* FirebaseRemoteConfig */; };
-		26D67CEA2D296F0500E0BF1A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26D67CE92D296F0500E0BF1A /* LaunchScreen.storyboard */; };
-		26D67CEB2D29708300E0BF1A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26D67CE92D296F0500E0BF1A /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		26193E752D2961960008B2CD /* RemoteConfigDemo-Starter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RemoteConfigDemo-Starter.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2634C0272D29625B00584D76 /* RemoteConfigDemo-Finished.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RemoteConfigDemo-Finished.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		26D67CD72D29687B00E0BF1A /* flow-diagram.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "flow-diagram.png"; path = "../flow-diagram.png"; sourceTree = SOURCE_ROOT; };
-		26D67CE92D296F0500E0BF1A /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -25,6 +22,13 @@
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Assets.xcassets,
+			);
+			target = 26193E742D2961960008B2CD /* RemoteConfigDemo-Starter */;
+		};
+		26D67CEE2D2970EE00E0BF1A /* Exceptions for "Shared" folder in "RemoteConfigDemo-Starter" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				LaunchScreen.storyboard,
 			);
 			target = 26193E742D2961960008B2CD /* RemoteConfigDemo-Starter */;
 		};
@@ -47,6 +51,14 @@
 				26D67CE42D296CC800E0BF1A /* Exceptions for "Resources" folder in "RemoteConfigDemo-Starter" target */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		26D67CED2D2970D600E0BF1A /* Shared */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				26D67CEE2D2970EE00E0BF1A /* Exceptions for "Shared" folder in "RemoteConfigDemo-Starter" target */,
+			);
+			path = Shared;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -76,7 +88,7 @@
 			children = (
 				26193E772D2961960008B2CD /* RemoteConfigDemo-Starter */,
 				2634C0282D29625B00584D76 /* RemoteConfigDemo-Finished */,
-				26D67CE82D296EF400E0BF1A /* Shared */,
+				26D67CED2D2970D600E0BF1A /* Shared */,
 				26D67CE32D296CBE00E0BF1A /* Resources */,
 				26D67CD72D29687B00E0BF1A /* flow-diagram.png */,
 				26D67CDB2D296C0E00E0BF1A /* Frameworks */,
@@ -98,14 +110,6 @@
 			children = (
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		26D67CE82D296EF400E0BF1A /* Shared */ = {
-			isa = PBXGroup;
-			children = (
-				26D67CE92D296F0500E0BF1A /* LaunchScreen.storyboard */,
-			);
-			path = Shared;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,6 +153,7 @@
 			fileSystemSynchronizedGroups = (
 				2634C0282D29625B00584D76 /* RemoteConfigDemo-Finished */,
 				26D67CE32D296CBE00E0BF1A /* Resources */,
+				26D67CED2D2970D600E0BF1A /* Shared */,
 			);
 			name = "RemoteConfigDemo-Finished";
 			packageProductDependencies = (
@@ -204,7 +209,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				26D67CEA2D296F0500E0BF1A /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -212,7 +216,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				26D67CEB2D29708300E0BF1A /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
