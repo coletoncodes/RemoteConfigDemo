@@ -30,3 +30,14 @@ playground.xcworkspace
 # .swiftpm
 
 .build/
+
+# Ignore copied GoogleService-Info.plist in build output
+*.app/GoogleService-Info.plist
+
+# Ignore build products and derived data
+DerivedData/
+*.app/
+
+# Ignore Firebase Config in specific build folders
+RemoteConfigDemo*/**/GoogleService-Info.plist
+

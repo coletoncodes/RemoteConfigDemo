@@ -13,8 +13,8 @@ struct RemoteConfigDemo_FinishedApp: App {
 	@UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
 
 	var body: some Scene {
-        WindowGroup {
-            ContentView()
-        }
-    }
+		WindowGroup {
+			ContentView()
+		}
+	}
 }

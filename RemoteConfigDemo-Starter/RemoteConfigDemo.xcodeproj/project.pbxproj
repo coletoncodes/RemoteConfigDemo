@@ -18,19 +18,21 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		26D67CE42D296CC800E0BF1A /* Exceptions for "Resources" folder in "RemoteConfigDemo-Starter" target */ = {
+		2677CD922D29AEDD006852A4 /* Exceptions for "Resources" folder in "RemoteConfigDemo-Starter" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				Assets.xcassets,
+				"GoogleService-Info/Debug/GoogleService-Info.plist",
+				"GoogleService-Info/Release/GoogleService-Info.plist",
 			);
 			target = 26193E742D2961960008B2CD /* RemoteConfigDemo-Starter */;
 		};
-		26D67CEE2D2970EE00E0BF1A /* Exceptions for "Shared" folder in "RemoteConfigDemo-Starter" target */ = {
+		2677CD932D29AEDE006852A4 /* Exceptions for "Resources" folder in "RemoteConfigDemo-Finished" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				LaunchScreen.storyboard,
+				"GoogleService-Info/Debug/GoogleService-Info.plist",
+				"GoogleService-Info/Release/GoogleService-Info.plist",
 			);
-			target = 26193E742D2961960008B2CD /* RemoteConfigDemo-Starter */;
+			target = 2634C0262D29625B00584D76 /* RemoteConfigDemo-Finished */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
@@ -45,19 +47,17 @@
 			path = "RemoteConfigDemo-Finished";
 			sourceTree = "<group>";
 		};
-		26D67CE32D296CBE00E0BF1A /* Resources */ = {
+		2677CD832D29AEC7006852A4 /* Resources */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				26D67CE42D296CC800E0BF1A /* Exceptions for "Resources" folder in "RemoteConfigDemo-Starter" target */,
+				2677CD922D29AEDD006852A4 /* Exceptions for "Resources" folder in "RemoteConfigDemo-Starter" target */,
+				2677CD932D29AEDE006852A4 /* Exceptions for "Resources" folder in "RemoteConfigDemo-Finished" target */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		26D67CED2D2970D600E0BF1A /* Shared */ = {
+		2677CD852D29AEC7006852A4 /* Shared */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				26D67CEE2D2970EE00E0BF1A /* Exceptions for "Shared" folder in "RemoteConfigDemo-Starter" target */,
-			);
 			path = Shared;
 			sourceTree = "<group>";
 		};
@@ -88,8 +88,8 @@
 			children = (
 				26193E772D2961960008B2CD /* RemoteConfigDemo-Starter */,
 				2634C0282D29625B00584D76 /* RemoteConfigDemo-Finished */,
-				26D67CED2D2970D600E0BF1A /* Shared */,
-				26D67CE32D296CBE00E0BF1A /* Resources */,
+				2677CD832D29AEC7006852A4 /* Resources */,
+				2677CD852D29AEC7006852A4 /* Shared */,
 				26D67CD72D29687B00E0BF1A /* flow-diagram.png */,
 				26D67CDB2D296C0E00E0BF1A /* Frameworks */,
 				26193E762D2961960008B2CD /* Products */,
@@ -129,6 +129,8 @@
 			);
 			fileSystemSynchronizedGroups = (
 				26193E772D2961960008B2CD /* RemoteConfigDemo-Starter */,
+				2677CD832D29AEC7006852A4 /* Resources */,
+				2677CD852D29AEC7006852A4 /* Shared */,
 			);
 			name = "RemoteConfigDemo-Starter";
 			packageProductDependencies = (
@@ -145,6 +147,7 @@
 				2634C0232D29625B00584D76 /* Sources */,
 				2634C0242D29625B00584D76 /* Frameworks */,
 				2634C0252D29625B00584D76 /* Resources */,
+				261AEC352D29846E004F91AD /* Copy Firebase GoogleService-Info.plist */,
 			);
 			buildRules = (
 			);
@@ -152,8 +155,8 @@
 			);
 			fileSystemSynchronizedGroups = (
 				2634C0282D29625B00584D76 /* RemoteConfigDemo-Finished */,
-				26D67CE32D296CBE00E0BF1A /* Resources */,
-				26D67CED2D2970D600E0BF1A /* Shared */,
+				2677CD832D29AEC7006852A4 /* Resources */,
+				2677CD852D29AEC7006852A4 /* Shared */,
 			);
 			name = "RemoteConfigDemo-Finished";
 			packageProductDependencies = (
@@ -221,6 +224,28 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		261AEC352D29846E004F91AD /* Copy Firebase GoogleService-Info.plist */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Firebase GoogleService-Info.plist";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#!/bin/bash\nset -x\necho \"🔥 Starting Firebase Config Copy Script 🔥\"\n\n# Define the workspace-relative path for the Resources directory\nPLIST_DIR=\"$SRCROOT/Resources/GoogleService-Info\"\n\n# Define the build app directory\nBUILD_APP_DIR=\"$BUILT_PRODUCTS_DIR/$PRODUCT_NAME.app\"\n\necho \"📂 PLIST_DIR: $PLIST_DIR\"\necho \"📂 BUILD_APP_DIR: $BUILD_APP_DIR\"\n\n# Determine the appropriate plist file based on the configuration\nif [ \"${CONFIGURATION}\" = \"Release\" ]; then\n    SOURCE_PLIST=\"$PLIST_DIR/Release/GoogleService-Info.plist\"\n    echo \"🚀 Using Release config: $SOURCE_PLIST\"\nelse\n    SOURCE_PLIST=\"$PLIST_DIR/Debug/GoogleService-Info.plist\"\n    echo \"🐛 Using Debug config: $SOURCE_PLIST\"\nfi\n\n# Check if the source plist exists\nif [ -f \"$SOURCE_PLIST\" ]; then\n    # Attempt to copy the plist file\n    cp -f \"$SOURCE_PLIST\" \"$BUILD_APP_DIR/GoogleService-Info.plist\"\n    if [ $? -eq 0 ]; then\n        echo \"✅ Successfully copied $SOURCE_PLIST to $BUILD_APP_DIR/GoogleService-Info.plist\"\n    else\n        echo \"❌ ERROR: Failed to copy $SOURCE_PLIST. Check permissions.\"\n        exit 1\n    fi\nelse\n    echo \"❌ ERROR: Source plist file not found: $SOURCE_PLIST\"\n    exit 1\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		26193E712D2961960008B2CD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -241,6 +266,8 @@
 /* Begin XCBuildConfiguration section */
 		26193E982D2961980008B2CD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReferenceAnchor = 2677CD832D29AEC7006852A4 /* Resources */;
+			baseConfigurationReferenceRelativePath = Config/Debug.xcconfig;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -276,7 +303,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -302,6 +329,8 @@
 		};
 		26193E992D2961980008B2CD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReferenceAnchor = 2677CD832D29AEC7006852A4 /* Resources */;
+			baseConfigurationReferenceRelativePath = Config/Release.xcconfig;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -337,7 +366,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -350,6 +379,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Release;
 		};
@@ -364,7 +394,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = Starter;
+				INFOPLIST_KEY_CFBundleDisplayName = RemoteConfigDemo;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -381,7 +411,7 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 15.1;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = coletoncodes.RemoteConfigDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = coletoncodes.remoteconfigdemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -404,7 +434,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = Starter;
+				INFOPLIST_KEY_CFBundleDisplayName = RemoteConfigDemo;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -421,7 +451,7 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 15.1;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = coletoncodes.RemoteConfigDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = coletoncodes.remoteconfigdemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -444,7 +474,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = Finished;
+				INFOPLIST_KEY_CFBundleDisplayName = RemoteConfigDemo;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -461,7 +491,7 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 15.1;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = coletoncodes.RemoteConfigDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = "${APP_BUNDLE_ID}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -484,7 +514,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = Finished;
+				INFOPLIST_KEY_CFBundleDisplayName = RemoteConfigDemo;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -501,11 +531,12 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 15.1;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = coletoncodes.RemoteConfigDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = "${APP_BUNDLE_ID}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
+				SWIFT_COMPILATION_MODE = singlefile;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
