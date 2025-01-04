@@ -10,9 +10,9 @@ import FirebaseCore
 
 @main
 struct RemoteConfigDemo_FinishedApp: App {
-	// register app delegate for Firebase setup
 	@UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
-    var body: some Scene {
+
+	var body: some Scene {
         WindowGroup {
             ContentView()
         }
