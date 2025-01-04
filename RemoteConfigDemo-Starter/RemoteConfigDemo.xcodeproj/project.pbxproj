@@ -9,6 +9,7 @@
 /* Begin PBXFileReference section */
 		26193E752D2961960008B2CD /* RemoteConfigDemo-Starter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RemoteConfigDemo-Starter.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2634C0272D29625B00584D76 /* RemoteConfigDemo-Finished.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RemoteConfigDemo-Finished.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		26D67CD72D29687B00E0BF1A /* flow-diagram.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "flow-diagram.png"; path = "../flow-diagram.png"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -45,6 +46,7 @@
 		26193E6C2D2961960008B2CD = {
 			isa = PBXGroup;
 			children = (
+				26D67CD72D29687B00E0BF1A /* flow-diagram.png */,
 				26193E772D2961960008B2CD /* RemoteConfigDemo-Starter */,
 				2634C0282D29625B00584D76 /* RemoteConfigDemo-Finished */,
 				26193E762D2961960008B2CD /* Products */,
